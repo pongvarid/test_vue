@@ -1,18 +1,50 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div>
+    <h1>Hello</h1>
+</div>
 </template>
 
+  
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+    name: 'Root',
+    /*-------------------------ประกาศ components ---------------------------------------*/
+    components: {
+
+    },
+    /*-------------------------รับค่าเมื่อเราเป็น components---------------------------------------*/
+    props: {
+
+    },
+    /*-------------------------ประกาศตัวแปรที่ใช้ ผูกกับ v-model ---------------------------------------*/
+    data() {
+        return {
+
+            txt: 'Hello World'
+
+        };
+    },
+    /*------------------------- สิ่งทที่อยู่ในนี้จะถูกรัยเมื่อโหลด ------------------------------------------*/
+    mounted: async function () {
+        /**** เรียกใช้ methods ชื่อ load() */
+        await this.load();
+    },
+    /*------------------------- กระทำการตอน router ถูกโหลดเข้ามา------------------------------------------*/
+    async beforeRouteEnter(to, from, next) {
+        next()
+    },
+    /*-------------------------ใช้จัดการ operation  หรือ คำนวณค่าต่างๆ (คล้าย methods)------------------------------------------*/
+    computed: {
+
+    },
+    /*-------------------------Methods------------------------------------------*/
+    methods: {
+        /******* Methods default run ******/
+        load: async function () {}
+    },
 }
 </script>
+
+<style lang='postcss' scoped>
+
+</style>
