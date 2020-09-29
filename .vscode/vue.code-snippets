@@ -165,12 +165,13 @@
 	"laxios":{
 		"prefix":"laxios",
 		"body":[
-			"await Axios.post('/user/login', state.userLogin)",
+			"let request = await axios.post('/user/login', state.userLogin)",
             ".then((r) => {" ,
-                 "",
+                 "return r.data",
 				"}).catch((e) => { ",
-					"",
-			" });"
+					"return e.response.data",
+			" });",
+			"return request"
 		]
 	},
 

@@ -1,11 +1,15 @@
 <template>
 <div>
-    <h1>Hello</h1>
+    <h1>{{bluetooth}}</h1> 
+    <button class="bg-green-500 text-white p-4 border-b-4 border-green-700"
+     @click="switchBluetooth()">Switch Bluetooth</button>
+     <pre>{{userProfile}}</pre>
 </div>
 </template>
 
   
 <script>
+import { sync, call} from 'vuex-pathify';
 export default {
     name: 'Root',
     /*-------------------------ประกาศ components ---------------------------------------*/
@@ -35,10 +39,14 @@ export default {
     },
     /*-------------------------ใช้จัดการ operation  หรือ คำนวณค่าต่างๆ (คล้าย methods)------------------------------------------*/
     computed: {
-
+        bluetooth:sync('test/BLUETOOTH'),
+        userProfile:sync('test/RAW_DATA'),
     },
     /*-------------------------Methods------------------------------------------*/
     methods: {
+        async switchBluetooth(){
+            this.bluetooth = !this.bluetooth
+        },
         /******* Methods default run ******/
         load: async function () {}
     },

@@ -1,32 +1,56 @@
 <template>
-  <div id="app">
+<div id="app">
+  <Navbar />
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <router-view/>
-  </div>
+    <router-view />
+</div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
-}
+import Navbar from '@/components/Navbar';
+export default {
+    name: 'Root',
+    /*-------------------------ประกาศ components ---------------------------------------*/
+    components: {
+        Navbar
+    },
+    /*-------------------------รับค่าเมื่อเราเป็น components---------------------------------------*/
+    props: {
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    },
+    /*-------------------------ประกาศตัวแปรที่ใช้ ผูกกับ v-model ---------------------------------------*/
+    data() {
+        return {
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+            txt: 'Hello World'
+
+        };
+    },
+    /*------------------------- สิ่งทที่อยู่ในนี้จะถูกรัยเมื่อโหลด ------------------------------------------*/
+    mounted: async function () {
+        /**** เรียกใช้ methods ชื่อ load() */
+        await this.load();
+    },
+    /*------------------------- กระทำการตอน router ถูกโหลดเข้ามา------------------------------------------*/
+    async beforeRouteEnter(to, from, next) {
+        next()
+    },
+    /*-------------------------ใช้จัดการ operation  หรือ คำนวณค่าต่างๆ (คล้าย methods)------------------------------------------*/
+    computed: {
+
+    },
+    /*-------------------------Methods------------------------------------------*/
+    methods: {
+        /******* Methods default run ******/
+        load: async function () {}
+    },
 }
+</script>
+
+<style lang='postcss' scoped>
+
 </style>
