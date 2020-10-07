@@ -8,9 +8,9 @@
         <input v-model="form.password" class="p-4 mt-4 rounded border-2" required placeholder="Password" type="password" >
         <button class="mt-4 p-4 text-white bg-green-500 rounded" type="submit"> Login </button>
     </form>
-    <pre>{{test_data}}</pre>
+    <pre>{{test_data}}</pre> 
     </div>
-    
+      
 </div>
 </template>
 

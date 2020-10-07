@@ -6,7 +6,7 @@
                 <title>menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
             </svg>
-        </label>
+        </label>   
         <input class="hidden" type="checkbox" id="menu-toggle">
 
         <div class=" md:flex md:items-center md:w-auto w-full order-3 md:order-1" 
