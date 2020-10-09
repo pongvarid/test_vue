@@ -15,6 +15,16 @@ const routes = [
     component: Home
   },
   {
+    path: '/bluetooth',
+    name: 'bluetooth',
+    component: loadPage('Bluetooth')
+  },
+  {
+    path: '/graph',
+    name: 'Graph',
+    component: loadPage('Graph')
+  },
+  {
     path: '/about',
     name: 'About', 
     component: loadPage('About')

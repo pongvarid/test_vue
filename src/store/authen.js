@@ -6,10 +6,7 @@ import {
 } from "vuex-pathify"
 
 const state = {
-    BLUETOOTH: false,
-    STATUS: false,
-    RAW_DATA:{},
-    CADENCE:[],
+   
 }
 
 const getters = {
@@ -21,8 +18,9 @@ const mutations = make.mutations(state)
 
 
 const actions = {
-    async storeDevice(context, device){
-        let request = await axios.post('/api/device', device)
+    
+    async login(context, form) {
+        let request = await axios.post('/api/login', form)
             .then((r) => {
                 return r.data;
             })
@@ -31,8 +29,8 @@ const actions = {
             })
         return request
     },
-    async login(context, form) {
-        let request = await axios.post('/api/login', form)
+    async register(context, form) {
+        let request = await axios.post('/api/register', form)
             .then((r) => {
                 return r.data;
             })
